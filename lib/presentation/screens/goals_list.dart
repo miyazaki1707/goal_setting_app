@@ -15,7 +15,9 @@ class _GoalListsScreenState extends State<GoalsListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Goals"),
+        title: Text(
+          "Goals",
+          style: Theme.of(context).textTheme.headlineLarge,),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () => {}, child: const Icon(Icons.add, size: 25.0),),
       bottomNavigationBar: BottomNavigationBar(items: [
@@ -25,10 +27,15 @@ class _GoalListsScreenState extends State<GoalsListScreen> {
       ],),
       body:  Column(
         children: [
-          Row(children: [ElevatedButton(onPressed: () => {}, child: const Text("All")), 
-          ElevatedButton(onPressed: () => {}, child: const Text("Personal")), 
-          ElevatedButton(onPressed: () => {}, child: const Text("Sport")), 
-          ElevatedButton(onPressed: () => {}, child: const Text("Business"))],),
+          Row(children: [
+            ElevatedButton(onPressed: () => {}, child: Text("All", style: Theme.of(context).textTheme.labelMedium),
+             style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary)),), 
+            ElevatedButton(onPressed: () => {}, child: Text("Personal", style: Theme.of(context).textTheme.labelMedium,),
+             style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary))), 
+            ElevatedButton(onPressed: () => {}, child: Text("Sport", style: Theme.of(context).textTheme.labelMedium),
+             style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary))), 
+            ElevatedButton(onPressed: () => {}, child: Text("Business", style: Theme.of(context).textTheme.labelMedium),
+             style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary)))],),
           const GoalWidget(),
         ],
       )
