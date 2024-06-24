@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:goal_setting_app/presentation/screens/create_goal.dart';
 import '../widgets/widgets.dart';
+
+var categories = [
+  "All",
+  "Personal",
+  "Sport",
+  "Business"
+];
 
 
 class GoalsListScreen extends StatefulWidget {
@@ -19,24 +27,44 @@ class _GoalListsScreenState extends State<GoalsListScreen> {
           "Goals",
           style: Theme.of(context).textTheme.headlineLarge,),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () => {}, child: const Icon(Icons.add, size: 25.0),),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: SvgPicture.asset('assets/images/goals_icon.svg'), label: 'Goals' ),
-        const BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Ongoing' ), 
-        const BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings')
-      ],),
+      floatingActionButton: FloatingActionButton(onPressed: () => {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const CreateGoalScreen()),
+        ),
+      }, backgroundColor: Theme.of(context).primaryColor , 
+        shape: const CircleBorder(), child: const Icon(Icons.add, weight: 100, size: 35.0, color: Colors.white,),),
+      // bottomNavigationBar: BottomNavigationBar(items: [
+      //   BottomNavigationBarItem(icon: SvgPicture.asset('assets/images/goals_icon.svg'), label: 'Goals' ),
+      //   const BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Ongoing' ), 
+      //   const BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings')
+      // ],),
       body:  Column(
         children: [
-          Row(children: [
-            ElevatedButton(onPressed: () => {}, child: Text("All", style: Theme.of(context).textTheme.labelMedium),
-             style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary)),), 
-            ElevatedButton(onPressed: () => {}, child: Text("Personal", style: Theme.of(context).textTheme.labelMedium,),
-             style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary))), 
-            ElevatedButton(onPressed: () => {}, child: Text("Sport", style: Theme.of(context).textTheme.labelMedium),
-             style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary))), 
-            ElevatedButton(onPressed: () => {}, child: Text("Business", style: Theme.of(context).textTheme.labelMedium),
-             style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary)))],),
-          const GoalWidget(),
+          Padding(
+            padding:const EdgeInsets.fromLTRB(10, 10, 0, 15),
+            child: SizedBox(
+              height: 40,
+              child: ListView.builder(
+                itemCount: categories.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 13),
+                    child: ElevatedButton(onPressed: () => {},
+                                   style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary), 
+                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8),
+                                      ))), 
+                                   child: Text(categories[index], style: Theme.of(context).textTheme.labelMedium),),
+                  ); 
+                },
+                scrollDirection: Axis.horizontal,
+                        ),),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 19, top: 10),
+            child: GoalWidget(),
+          ),
         ],
       )
     );
