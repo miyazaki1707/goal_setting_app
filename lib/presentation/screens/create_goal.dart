@@ -11,7 +11,12 @@ class CreateGoalScreen extends StatefulWidget {
 class _CreateGoalScreen extends State<CreateGoalScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Create a goal",
+          style: Theme.of(context).textTheme.headlineLarge,),
+      ),
       body: Center(child: Text("Create a goal"),),
     );
   }
