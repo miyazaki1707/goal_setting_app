@@ -23,9 +23,8 @@ class App extends StatelessWidget {
             ),
             bodySmall: TextStyle(
               fontFamily: 'Roboto',
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-              color: Colors.black
+              fontSize: 14,
+              color: Color.fromRGBO(73, 73, 73, 1)
             ),
             labelLarge: TextStyle(
               fontFamily: 'Roboto',
@@ -42,6 +41,12 @@ class App extends StatelessWidget {
               fontFamily: 'Roboto',
               fontSize: 14,
               color: Color.fromRGBO(244, 244, 244, 244),
+            ),
+            titleSmall: TextStyle(
+              fontFamily: 'Roboto',
+              fontSize: 14,
+              color: Color.fromRGBO(170, 170, 170, 1),
+              fontWeight: FontWeight.w400
             )
           )
       ),

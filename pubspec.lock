@@ -251,6 +251,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   frontend_server_client:
     dependency: transitive
     description:
@@ -315,6 +320,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  image_picker_web:
+    dependency: "direct main"
+    description:
+      name: image_picker_web
+      sha256: b5cf4faf66714f17b3e86b37a39d19743603163a08b968b28cadfc5df1dc2b75
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.0"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.19.0"
   io:
     dependency: transitive
     description:
@@ -632,6 +653,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "13.0.0"
+  vph_common_widgets:
+    dependency: transitive
+    description:
+      name: vph_common_widgets
+      sha256: "5b4994af8f147e506408246b5d58a92baf368c4e05dff96f592b4d907205c6ca"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
+  vph_web_date_picker:
+    dependency: "direct main"
+    description:
+      name: vph_web_date_picker
+      sha256: "3c2a59159452d8644661393a65cab2fab28cc9436153bbc1175fc89f4ad05346"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.7"
   watcher:
     dependency: transitive
     description:

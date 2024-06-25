@@ -15,6 +15,8 @@ dependencies:
   equatable: ^2.0.5
   flutter_svg: ^2.0.10+1
   flutter_dash: ^1.0.0
+  vph_web_date_picker: ^0.0.7
+  image_picker_web: ^4.0.0
 
 dev_dependencies:
   flutter_test:
