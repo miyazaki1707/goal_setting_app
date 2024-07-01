@@ -17,6 +17,30 @@ class _GoalScreen extends State<GoalScreen> {
             IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
           ],
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: Container(
+            constraints: const BoxConstraints(maxWidth: 300),
+            height: 44,
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).colorScheme.primary),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ))),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Center(
+                    child: Text(
+                  "Create a goal",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Roboto',
+                      color: Colors.white),
+                )))),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
